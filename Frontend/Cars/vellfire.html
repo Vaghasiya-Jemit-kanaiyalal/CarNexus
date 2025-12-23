@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toyota Vellfire Info</title>
+  <link rel="stylesheet" href="cars.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav-bar">
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="nav-menu">
+        <h3>
+          <a href="../../index.html">Home</a>
+          <a href="../2CARS.html">Cars</a>
+          <a href="../3Service.html">Service</a>
+          <a href="../4Testdrive.html">Test-Drive</a>
+          <a href="../5Compare.html">Compare</a>
+          <a href="../6Offers.html">Offers</a>
+          <a href="../7EMI.html">EMI-calculate</a>
+          <a href="../8Review.html">Reviews</a>
+          <a href="../9Location.html">Locations</a>
+        </h3>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Side-by-Side -->
+  <main class="page-layout">
+    <!-- Left Features -->
+    <section class="features">
+      <h3>🚗 Toyota Vellfire - Features</h3>
+      <ul>
+        <li>Hybrid electric engine</li>
+        <li>Captain seats with recline</li>
+        <li>Panoramic sunroof</li>
+        <li>Touchscreen infotainment</li>
+        <li>Ventilated seats</li>
+        <li>Dual-zone climate control</li>
+        <li>Automatic sliding doors</li>
+        <li>Digital MID & HUD</li>
+      </ul>
+    </section>
+
+    <!-- Right 3D Model -->
+    <section class="model-box">
+      <h3>🛠️ Explore Toyota Vellfire in 3D</h3>
+     
+      <model-viewer src="../models/vellfire.glb"
+        alt="Toyota Vellfire 3D Model"
+        camera-controls auto-rotate shadow-intensity="1">
+      </model-viewer>
+    </section>
+  </main>
+
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:dealershipindia@gmail.com" target="_blank">dealershipindia@gmail.com</a>
+      <a href="../Aboutus.html">About us / Contact us</a>
+      <a href="../Help.html">Help</a>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

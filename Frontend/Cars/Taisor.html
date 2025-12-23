@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urban Cruiser Taisor Info</title>
+  <link rel="stylesheet" href="cars.css">
+</head>
+<body>
+  <header>
+    <div class="nav-bar">
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="nav-menu">
+        <h3>
+          <a href="../../index.html">Home</a>
+          <a href="../2CARS.html">Cars</a>
+          <a href="../3Service.html">Service</a>
+          <a href="../4Testdrive.html">Test-Drive</a>
+          <a href="../5Compare.html">Compare</a>
+          <a href="../6Offers.html">Offers</a>
+          <a href="../7EMI.html">EMI-calculate</a>
+          <a href="../8Review.html">Reviews</a>
+          <a href="../9Location.html">Locations</a>
+        </h3>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-layout">
+    <section class="features">
+      <h3>🚗 Urban Cruiser Taisor - Features</h3>
+      <ul>
+        <li>1.2L K-series petrol and CNG variants</li>
+        <li>Striking SUV coupe-like roofline</li>
+        <li>Head-up display and 9" touchscreen</li>
+        <li>Connected features and auto updates</li>
+        <li>Auto folding mirrors and DRLs</li>
+        <li>Dual-tone interiors with red stitching</li>
+        <li>Voice-activated control system</li>
+        <li>Good ground clearance for city and highway</li>
+        <li>Front and rear USB charging ports</li>
+        <li>Dual airbags, ABS, and EBD</li>
+        <li>Reverse parking camera and sensors</li>
+        <li>LED tail lamps with smoked effect</li>
+      </ul>
+    </section>
+
+    <section class="model-box">
+      <h3>Urban Cruiser Taisor</h3>
+      <img src="https://www.toyotakenya.ke/media/gamme/modeles/images/f8b1c1fd825e93c2f09d3eac0104f524.png" alt="Urban Cruiser Taisor" style="width:100%; border-radius:10px;">
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:dealershipindia@gmail.com" target="_blank">dealershipindia@gmail.com</a>
+      <a href="../Aboutus.html">About us / Contact us</a>
+      <a href="../Help.html">Help</a>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

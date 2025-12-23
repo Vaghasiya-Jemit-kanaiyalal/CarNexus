@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toyota Camry Info</title>
+  <link rel="stylesheet" href="cars.css">
+</head>
+<body>
+  <header>
+    <div class="nav-bar">
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="nav-menu">
+        <h3>
+          <a href="../../index.html">Home</a>
+          <a href="../2CARS.html">Cars</a>
+          <a href="../3Service.html">Service</a>
+          <a href="../4Testdrive.html">Test-Drive</a>
+          <a href="../5Compare.html">Compare</a>
+          <a href="../6Offers.html">Offers</a>
+          <a href="../7EMI.html">EMI-calculate</a>
+          <a href="../8Review.html">Reviews</a>
+          <a href="../9Location.html">Locations</a>
+        </h3>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-layout">
+    <section class="features">
+      <h3>🚗 Toyota Camry - Features</h3>
+      <ul>
+        <li>2.5L strong hybrid petrol engine</li>
+        <li>e-CVT transmission for smooth rides</li>
+        <li>Luxury sedan with executive comfort</li>
+        <li>Reclining rear seats with controls</li>
+        <li>10-speaker JBL system & touchscreen</li>
+        <li>Auto sunshade and mood lighting</li>
+        <li>ADAS safety features built-in</li>
+        <li>19 km/l fuel efficiency (hybrid)</li>
+        <li>Leather upholstery and premium finish</li>
+        <li>Powered boot and smart entry system</li>
+        <li>Head-up display and ambient console</li>
+        <li>Available in 5 exterior color options</li>
+      </ul>
+    </section>
+
+    <section class="model-box">
+      <h3>Toyota Camry</h3>
+      <img src="https://vehicle-images.dealerinspire.com/080e-110005342/thumbnails/large/4T1DAACK3SU625856/1b7ca22889a50de3ad80db9d00a1f928.png
+" alt="Toyota Camry" style="width:100%; border-radius:10px;">
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:dealerindia280@gmail.com" target="_blank">dealerindia280@gmail.com</a>
+      <a href="../Aboutus.html">About us / Contact us</a>
+      <a href="../Help.html">Help</a>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

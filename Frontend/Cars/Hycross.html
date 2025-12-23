@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toyota HyCross Info</title>
+  <link rel="stylesheet" href="cars.css">
+</head>
+<body>
+  <header>
+    <div class="nav-bar">
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="nav-menu">
+        <h3>
+          <a href="../../index.html">Home</a>
+          <a href="../2CARS.html">Cars</a>
+          <a href="../3Service.html">Service</a>
+          <a href="../4Testdrive.html">Test-Drive</a>
+          <a href="../5Compare.html">Compare</a>
+          <a href="../6Offers.html">Offers</a>
+          <a href="../7EMI.html">EMI-calculate</a>
+          <a href="../8Review.html">Reviews</a>
+          <a href="../9Location.html">Locations</a>
+        </h3>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-layout">
+    <section class="features">
+      <h3>🚗 Toyota Innova HyCross - Features</h3>
+      <ul>
+        <li>2.0L TNGA hybrid petrol engine</li>
+        <li>e-Drive CVT gearbox, smooth and silent</li>
+        <li>First-in-segment ADAS driver assist</li>
+        <li>Panoramic sunroof and digital MID</li>
+        <li>Premium quilted leather seating</li>
+        <li>Ventilated front seats and rear recliners</li>
+        <li>Premium JBL 9-speaker system</li>
+        <li>Connected car tech with remote AC on</li>
+        <li>Lane assist, collision alert, blind spot view</li>
+        <li>Fully foldable third row seats</li>
+        <li>Best-in-class mileage for MPV (21 km/l)</li>
+        <li>Available in 5 variants and 7 colors</li>
+      </ul>
+    </section>
+
+    <section class="model-box">
+      <h3>Toyota HyCross</h3>
+      <img src="../../photo/Hycross.png" alt="Toyota HyCross" style="width:100%; border-radius:10px;">
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:dealerindia280@gmail.com" target="_blank">dealerindia280@gmail.com</a>
+      <a href="../Aboutus.html">About us / Contact us</a>
+      <a href="../Help.html">Help</a>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

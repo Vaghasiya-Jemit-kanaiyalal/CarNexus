@@ -1,0 +1,178 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME PAGE</title>
+    <link rel="stylesheet" href="Frontend/style.css" class="css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="nav-bar">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="nav-menu">
+                <h3>
+                    <a href="Frontend/index.html" target="_blank">Home</a>
+                    <a href="Frontend/2CARS.html">Cars</a>
+                    <a href="Frontend/3Service.html">Service</a>
+                    <a href="Frontend/4Testdrive.html">Test-Drive</a>
+                    <a href="Frontend/5Compare.html">Compare</a>
+                    <a href="Frontend/6Offers.html">Offers</a>
+                    <a href="Frontend/7EMI.html">EMI-calculate</a>
+                    <a href="Frontend/8Review.html">Reviews</a>
+                    <a href="Frontend/9Location.html">Locations</a>
+                </h3>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <main>
+        <div id="tagline">
+            <h1 style="text-align:center;">
+                WELCOME TO INDIA'S MOST AWAITED VIRTUAL SHOWROOM
+        </div>
+
+        <div class="intro">
+            <img src="https://static3.toyotabharat.com/images/homepage/banners/happier-paths-tomorrow-1920x807.jpg">
+        </div>
+
+        <div class="brand-description" style="text-align:center;">
+            <h2><b>A Brand Trusted for 10 Years!!!</b></h2>
+            <h2>
+                We have been serving our customers for OVER 10 years with honesty, quality, and care. At GadiGhar,
+                you'll find a wide range of luxury cars that give you both comfort and style. Our showroom is known for
+                its
+                clean space, helpful staff, and the trust we've built over the years. Whether you are looking to buy a
+                new
+                car or just want to explore the latest models, we are here to help. Come and experience why so many
+                people
+                trust us when it comes to choosing the right car.
+            </h2>
+        </div>
+
+        <section>
+            <div class="featured-cars">
+                <h2>Featured Cars</h2>
+                <table align="center" cellpadding="15">
+                    <tr>
+                        <td align="left" width="250">
+                            <img src="/photo/Vellfire.png" alt="Car 1" width="200" height="120"><br>
+                            <b>Toyota Vellfire</b><br>
+                            <a href="Frontend/Cars/vellfire.html">View Details</a>
+                        </td>
+
+                        <td align="center" width="250">
+                            <img src="/photo/Fortuner.png" alt="Car 2" width="200" height="120"><br>
+                            <b>Toyota-Fortuner-Legender</b><br>
+                            <a href="InfoCars//Fortuner.html">View Details</a>
+                        </td>
+
+                       <td align="center" width="250">
+                            <img src="/photo/supra.png" alt="Car 3" width="200" height="120"><br>
+                            <b>Toyota SUPRA-GT</b><br>
+                            <a href="Cars/supra_gt.html">View Details</a>
+                        </td>
+
+
+                        <td align="center" width="250">
+                            <img src="/photo/Hillux.png" alt="Car 3" width="200" height="120"><br>
+                            <b>Toyota Hillux</b><br>
+                            <a href="Cars/Hillux.html">View Details</a>
+                        </td>
+
+                        <td align="center" width="250">
+                            <img src="/photo/Rumion.png" alt="Car 3" width="200" height="120"><br>
+                            <b>Toyota Rumion</b><br>
+                            <a href="Cars/Rumion.html">View Details</a>
+                        </td>
+
+                        <td align="right" width="250">
+                            <img src="/photo/Crysta.png" alt="Car 3" width="200" height="120"><br>
+                            <b>Toyota Inova Crysta</b><br>
+                            <a href="Cars/innova.html">View Details</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <div class="why-choose-us">
+                <h2>Why Choose Us?</h2>
+                <ul>
+                    <li><b>Trusted for 10+ Years:</b> Thousands of happy customers.</li>
+                    <li><b>Wide Range of Cars:</b> From budget to luxury, all in one place.</li>
+                    <li><b>Best Price Guarantee:</b> Unbeatable deals and offers.</li>
+                    <li><b>Expert Support:</b> Friendly and knowledgeable staff.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="customer-reviews">
+                <h2 style="text-align:center;">What Our Customers Say</h2>
+                <table align="center" cellpadding="15">
+                    <tr>
+                        <td>
+                            "Excellent service and a great selection of cars. Highly recommended!"<br>
+                            <b>- Krishna G.</b>
+                        </td>
+                        <td>
+                            "The staff was very helpful and made my purchase easy and stress-free."<br>
+                            <b>- Mihir P.</b>
+                        </td>
+                        <td>
+                            "Best prices in town and a trustworthy team. Will visit again!"<br>
+                            <b>- Krushnakumar Singh</b>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dealerindia280@gmail.com" target="_blank">
+                    dealerindia280@gmail.com
+                </a>
+                <a href="Frontend/Aboutus.html">About us /Contact us</a>
+                <a href="Frontend/Help.html">Help</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vellfire Car Game</title>
+  <style>
+    body { margin: 0; overflow: hidden; background: #222; }
+    #info {
+      position: absolute; top: 10px; left: 10px;
+      background: rgba(0,0,0,0.5); color: white;
+      padding: 8px 12px; border-radius: 8px;
+      font-family: Arial, sans-serif; font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div id="info">⬆️⬇️ Arrow keys: Move<br>⬅️➡️ Arrow keys: Steer</div>
+
+  <!-- Three.js + GLTFLoader -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.164.1/examples/js/loaders/GLTFLoader.js"></script>
+
+  <script>
+    let scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x87ceeb); // Sky blue
+
+    let camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    let renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Lights
+    const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1.2);
+    hemiLight.position.set(0, 200, 0);
+    scene.add(hemiLight);
+
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+    dirLight.position.set(50, 100, -50);
+    scene.add(dirLight);
+
+    // Road (long plane)
+    const roadGeo = new THREE.PlaneGeometry(200, 20);
+    const roadMat = new THREE.MeshPhongMaterial({ color: 0x333333 });
+    const road = new THREE.Mesh(roadGeo, roadMat);
+    road.rotation.x = -Math.PI/2;
+    scene.add(road);
+
+    let car;
+    const loader = new THREE.GLTFLoader();
+    loader.load(
+      "vellfire.glb",  // ⚠️ Make sure vellfire.glb is in the same folder
+      (gltf) => {
+        car = gltf.scene;
+        car.scale.set(0.5, 0.5, 0.5);   // adjust size if too big/small
+        car.position.set(0, 0, 0);
+        scene.add(car);
+      },
+      undefined,
+      (error) => console.error("Error loading car model:", error)
+    );
+
+    // Camera follow settings
+    camera.position.set(0, 5, -10);
+
+    // Keyboard input
+    const keys = {};
+    window.addEventListener("keydown", e => keys[e.key] = true);
+    window.addEventListener("keyup", e => keys[e.key] = false);
+
+    let speed = 0;
+    let angle = 0;
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      if (car) {
+        // Forward/backward
+        if (keys["ArrowUp"]) speed += 0.002;
+        if (keys["ArrowDown"]) speed -= 0.002;
+
+        // Friction
+        speed *= 0.98;
+
+        // Steer only when moving
+        if (Math.abs(speed) > 0.001) {
+          if (keys["ArrowLeft"]) angle += 0.02;
+          if (keys["ArrowRight"]) angle -= 0.02;
+        }
+
+        // Move car
+        car.rotation.y = angle;
+        car.position.x += Math.sin(angle) * speed * 5;
+        car.position.z += Math.cos(angle) * speed * 5;
+
+        // Camera follows behind car
+        let camOffset = new THREE.Vector3(0, 5, -12).applyAxisAngle(new THREE.Vector3(0,1,0), angle);
+        camera.position.copy(car.position).add(camOffset);
+        camera.lookAt(car.position);
+      }
+
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // Resize
+    window.addEventListener("resize", () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>

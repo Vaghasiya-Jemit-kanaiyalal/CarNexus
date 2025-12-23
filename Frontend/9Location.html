@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealership Locations</title>
+    <link rel="stylesheet" href="style.css" class="css">
+    <style>/* style.css - Locations Page Styling */
+
+/* === 1. General Reset and Body Styles === */
+* {
+    /* Set box-sizing to border-box for easier layout management */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+/* === 2. Header and Navigation Styles === */
+header {
+    background-color: #031b33c5; /* Dark Blue */
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header h3 {
+    font-weight: normal; 
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+}
+
+/* Nav Link Effects */
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s; 
+    font-size: 0.95rem; 
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #003366; 
+    color: #ffcc00; 
+}
+
+/* === 3. Main Content Layout === */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Page Title */
+.location- h1 {
+    color: #004d99;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #ffcc00;
+    text-align: center; /* Ensure it stays centered */
+}
+
+/* === 4. Locations Table Styles (The Map Grid) === */
+.location- table {
+    width: 100%;
+    /* Override inline HTML attribute 'align="center"' */
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: separate;
+    border-spacing: 20px 30px; /* Replaces cellpadding and controls space between cells */
+}
+
+.location- table td {
+    /* Set up each location cell */
+    text-align: center;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.location- table td:hover {
+    transform: translateY(-5px); /* Lift the card slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.location- table b {
+    display: block; /* Make the city name a block element */
+    font-size: 1.3rem;
+    color: #cc0000; /* Red for emphasis */
+    margin-bottom: 15px;
+}
+
+/* Map Image Styling */
+.location- img {
+    /* Remove inline HTML attributes width="200px" height="200px" for CSS control */
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover; /* Ensures the image fills the space cleanly */
+    border: 3px solid #004d99;
+    border-radius: 50%; /* Makes the map images circular */
+    transition: border-color 0.3s;
+}
+
+.location- table a:hover img {
+    border-color: #ffcc00; /* Yellow border on map hover */
+}
+
+/* === 5. Footer Styles === */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer nav h3 {
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+footer nav a {
+    color: #b0c4de; /* Lighter color for footer links */
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px;
+    transition: color 0.3s;
+    display: inline-block;
+}
+
+footer nav a:hover,
+footer nav a:focus {
+    color: #ffffff; /* White on hover */
+    text-decoration: underline;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-7px, -7px);
+}
+
+/* Mobile responsive nav */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #031b33c5;
+    flex-direction: column;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    z-index: 999;
+  }
+
+  nav.active {
+    max-height: 400px;
+    padding: 20px 0;
+  }
+
+  nav h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  nav a {
+    display: block;
+    width: 100%;
+    padding: 15px 20px !important;
+    text-align: center;
+    margin: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+  }
+
+  nav a:last-child {
+    border-bottom: none;
+  }
+
+  header {
+    position: relative;
+    min-height: 50px;
+  }
+
+  main {
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  .location- h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .location- table {
+    border-spacing: 10px 15px;
+  }
+
+  .location- table td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .location- img {
+    width: 100%;
+    max-width: 150px;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+}</style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="nav-bar">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="nav-menu">
+                <h3>
+                    <a href="../index.html" target="_blank">Home</a>
+                    <a href="2CARS.html">Cars</a>
+                    <a href="3Service.html">Service</a>
+                    <a href="4Testdrive.html">Test-Drive</a>
+                    <a href="5Compare.html">Compare</a>
+                    <a href="6Offers.html">Offers</a>
+                    <a href="7EMI.html">EMI-calculate</a>
+                    <a href="8Review.html">Reviews</a>
+                    <a href="9Location.html">Locations</a>
+                </h3>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="location-">
+            <h1 style="text-align:center;">No More Trouble Finding Us!</h1>
+
+            <table align="center" cellpadding="15">
+                <tr>
+                    <td align="center">
+                        <b>Surat</b><br>
+                        <a href="https://www.google.com/maps/search/surat+toyota+showroom/@21.1749106,72.7452637,11z" target="_blank">
+                            <img src="https://static1.anpoimages.com/wordpress/wp-content/uploads/2022/07/googleMapsTricksHero.jpg"
+                                 width="200px" height="200px" alt="Surat Map">
+                        </a>
+                    </td>
+                    <td align="center">
+                        <b>Mumbai</b><br>
+                        <a href="https://www.google.com/maps/search/Mumbai+toyota+showroom/@19.1219919,72.8053776,11z" target="_blank">
+                            <img src="https://static1.anpoimages.com/wordpress/wp-content/uploads/2022/07/googleMapsTricksHero.jpg"
+                                 width="200px" height="200px" alt="Mumbai Map">
+                        </a>
+                    </td>
+                    <td align="center">
+                        <b>Delhi</b><br>
+                        <a href="https://www.google.com/maps/search/Delhi+toyota+showroom/@28.6830404,76.993547,11z" target="_blank">
+                            <img src="https://static1.anpoimages.com/wordpress/wp-content/uploads/2022/07/googleMapsTricksHero.jpg"
+                                 width="200px" height="200px" alt="Delhi Map">
+                        </a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center">
+                        <b>Ahmedabad</b><br>
+                        <a href="https://www.google.com/maps/search/Ahmedabad+toyota+showroom/@23.1358916,72.2837868,10z" target="_blank">
+                            <img src="https://static1.anpoimages.com/wordpress/wp-content/uploads/2022/07/googleMapsTricksHero.jpg"
+                                 width="200px" height="200px" alt="Ahmedabad Map">
+                        </a>
+                    </td>
+                    <td align="center">
+                        <b>Chennai</b><br>
+                        <a href="https://www.google.com/maps/search/chennai+toyota+showroom/@13.0066595,79.8130231,11z" target="_blank">
+                            <img src="https://static1.anpoimages.com/wordpress/wp-content/uploads/2022/07/googleMapsTricksHero.jpg"
+                                 width="200px" height="200px" alt="Chennai Map">
+                        </a>
+                    </td>
+                    <td align="center">
+                        <b>Bengaluru</b><br>
+                        <a href="https://www.google.com/maps/search/bengluru+toyota+showroom/@12.9823351,77.5752591,12z" target="_blank">
+                            <img src="https://static1.anpoimages.com/wordpress/wp-content/uploads/2022/07/googleMapsTricksHero.jpg"
+                                 width="200px" height="200px" alt="Bengaluru Map">
+                        </a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center">
+                        <b>Pune</b><br>
+                        <a href="https://www.google.com/maps/search/pune+toyota+showroom/@18.6271574,73.8759282,11z" target="_blank">
+                            <img src="https://static1.anpoimages.com/wordpress/wp-content/uploads/2022/07/googleMapsTricksHero.jpg"
+                                 width="200px" height="200px" alt="Pune Map">
+                        </a>
+                    </td>
+                    <td align="center">
+                        <b>Jaipur</b><br>
+                        <a href="https://www.google.com/maps/search/jaipur+toyota+showroom/@26.7492215,74.9705481,10z" target="_blank">
+                            <img src="https://static1.anpoimages.com/wordpress/wp-content/uploads/2022/07/googleMapsTricksHero.jpg"
+                                 width="200px" height="200px" alt="Jaipur Map">
+                        </a>
+                    </td>
+                    <td align="center">
+                        <b>Kolkata</b><br>
+                        <a href="https://www.google.com/maps/search/kolkata+toyota+showroom/@22.5614194,88.1914475,11z" target="_blank">
+                            <img src="https://static1.anpoimages.com/wordpress/wp-content/uploads/2022/07/googleMapsTricksHero.jpg"
+                                 width="200px" height="200px" alt="Kolkata Map">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dealerindia280@gmail.com" target="_blank">
+                    dealerindia280@gmail.com
+                </a>
+                <a href="Aboutus.html">About us /Contact us</a>
+                <a href="Help.html">Help</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

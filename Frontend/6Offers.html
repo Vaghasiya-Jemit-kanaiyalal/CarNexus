@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers Page</title>
+    <link rel="stylesheet" href="style.css" class="css">
+<style>main {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* === Offers Section Styles === */
+.offers-section {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* style.css */
+
+/* ... (previous CSS) ... */
+
+.offer-banner {
+    text-align: center; 
+    margin-bottom: 30px;
+    overflow: hidden; 
+    height: 180px; 
+    background-color: #000; 
+    border-radius: 6px; 
+}
+
+.offer-banner img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+                           
+    border-radius: 6px; 
+    display: block; 
+}
+
+/* ... (rest of your CSS) ... */
+.offers-section h2 {
+    color: #004d99;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 1.7rem;
+}
+
+/* Specific Offer Details Styling (Fortuner Legender) */
+.offers-section > div:nth-of-type(3) {
+    /* Targets the div containing the Fortuner Legender details */
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    max-width: 300px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+}
+
+.offers-section > div:nth-of-type(3) img {
+    /* Override inline styles for better control */
+    width: 100%;
+    height: auto;
+    max-width: 250px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.offers-section > div:nth-of-type(3) b {
+    display: block; /* Make the car name stand out on its own line */
+    font-size: 1.1rem;
+    color: #003366;
+    margin-bottom: 5px;
+}
+
+.offers-section > div:nth-of-type(3) a {
+    color: #cc0000; /* Red link for 'View More' */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.offers-section > div:nth-of-type(3) a:hover {
+    text-decoration: underline;
+}
+
+/* === Table Styles (Present and Upcoming Offers) === */
+.present-offers table,
+.upcoming-offers table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.present-offers th,
+.present-offers td,
+.upcoming-offers th,
+.upcoming-offers td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.present-offers th,
+.upcoming-offers th {
+    background-color: #e6f0ff; /* Light Blue for headers */
+    color: #004d99;
+    font-weight: bold;
+    width: 30%; /* Set a width for the offer name column */
+}
+
+.upcoming-offers tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.upcoming-offers tr:hover {
+    background-color: #e0eaff;
+}
+</style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="nav-bar">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="nav-menu">
+                <h3>
+                    <a href="../index.html" target="_blank">Home</a>
+                    <a href="2CARS.html">Cars</a>
+                    <a href="3Service.html">Service</a>
+                    <a href="4Testdrive.html">Test-Drive</a>
+                    <a href="5Compare.html">Compare</a>
+                    <a href="6Offers.html">Offers</a>
+                    <a href="7EMI.html">EMI-calculate</a>
+                    <a href="8Review.html">Reviews</a>
+                    <a href="9Location.html">Locations</a>
+                </h3>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="offers-section">
+            <div class="offer-banner">
+                <img src="/photo/offeres.png"
+                    width="100px" height="100px" alt="offer photo">
+            </div>
+
+
+            <h2 style>Present Offers</h2>
+            <div class="present-offers">
+
+                <table>
+                    <tr>
+                        <th>Festive Discount</th>
+                        <td>Flat Rupees 5000 Off on Toyota Toyota-Fortuner-Legender</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+                <img src="https://www.financialexpress.com/wp-content/uploads/2022/01/Toyota-Fortuner-Legender-1.jpg"
+                    width="250px" height="150px"><br>
+                <b>Fortuner Legender</b><br>
+                Price: ₹43.22 Lakh<br>
+                Fuel Type: Diesel<br>
+                <a href="../Frontend/Cars/Fortuner.html" target="_blank">View More</a>
+
+            </div>
+
+            <h2>Upcoming Offers</h2>
+            <div class="upcoming-offers">
+                <table>
+                    <tr>
+                        <th>Launch Offer-EV SUV</th>
+                        <td>Coming soon..</td>
+                        <td>Introductory price + first year insurance free.</td>
+                    </tr>
+                    <tr>
+                        <th>Student Offer</th>
+                        <td>Next Month</td>
+                        <td>Special EMI plans and insurance discounts for students.</td>
+                    </tr>
+                    <tr>
+                        <th>Test Drive Cashback</th>
+                        <td>From Aug 10</td>
+                        <td>₹2,000 cashback on booking after test drive.</td>
+                    </tr>
+                    <tr>
+                        <th>Diwali Super Sale</th>
+                        <td>From Oct 15</td>
+                        <td>Discounts up to ₹1 Lakh on select models.</td>
+                    </tr>
+                    <tr>
+                        <th>New Year Bonanza</th>
+                        <td>Starting Dec 25</td>
+                        <td>Free 3-year service package + accessories combo.</td>
+                    </tr>
+                </table>
+            </div>
+    </main>
+   <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dealerindia280@gmail.com" target="_blank">
+                    dealerindia280@gmail.com
+                </a>
+                <a href="Aboutus.html">About us /Contact us</a>
+                <a href="Help.html">Help</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

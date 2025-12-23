@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Page</title>
+    <link rel="stylesheet" href="style.css" class="css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="nav-bar">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="nav-menu">
+                <h3>
+                    <a href="../index.html" target="_blank">Home</a>
+                    <a href="2CARS.html">Cars</a>
+                    <a href="3Service.html">Service</a>
+                    <a href="4Testdrive.html">Test-Drive</a>
+                    <a href="5Compare.html">Compare</a>
+                    <a href="6Offers.html">Offers</a>
+                    <a href="7EMI.html">EMI-calculate</a>
+                    <a href="8Review.html">Reviews</a>
+                    <a href="9Location.html">Locations</a>
+                </h3>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="service-links" style="text-align:center; margin: 20px;">
+            <nav>
+                <a href="BookApp.html">Book Appointment</a> |
+                <a href="FAQ.html">FAQ</a>
+            </nav>
+        </div>
+
+  
+        <div class="service-table">
+            <table cellpadding="20" width="100%">
+                <tr>
+                    <td width="50%">
+                        <img src="https://t4.ftcdn.net/jpg/05/07/81/29/360_F_507812981_dGZXqBsqkBpEosDjTlJgmaJAyMFra7sp.jpg"
+                            width="100%" height="300" alt="Service">
+                    </td>
+                    <td width="50%">
+                        <h3>1. Scheduled Maintenance</h3>
+                        <p>
+                            Keep your Toyota in peak condition with timely scheduled maintenance. Our certified technicians
+                            follow Toyota's recommended service schedule to improve efficiency and extend vehicle life.
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td width="50%">
+                        <h3>2. Car Spa & Detailing</h3>
+                        <p>Refresh your drive with our premium cleaning and detailing services. We offer interior vacuuming,
+                            seat shampooing, exterior polishing, and ceramic coating to give your Toyota a showroom shine.
+                        </p>
+                    </td>
+                    <td width="50%">
+                        <img src="https://www.galaxytoyota.in/blog/wp-content/uploads/2024/10/Ceramic-Coating.jpeg"
+                            width="100%" alt="Service">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td width="50%">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk5_nbN40RMH46aVuqPosRNm3p6AFmjd26SA&s"
+                            width="100%" alt="service">
+                    </td>
+                    <td width="50%">
+                        <h3>3. Repair & Diagnostics</h3>
+                        <p>Got a warning light or unusual sound? Our advanced diagnostic tools and expert mechanics ensure
+                            accurate problem detection and quick repairs — from brake systems to engine tuning, all under
+                            one roof.</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+
+      <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dealerindia280@gmail.com" target="_blank">
+                    dealerindia280@gmail.com
+                </a>
+                <a href="Aboutus.html">About us /Contact us</a>
+                <a href="Help.html">Help</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

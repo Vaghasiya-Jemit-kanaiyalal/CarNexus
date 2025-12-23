@@ -1,0 +1,1285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #2d3436;
+    line-height: 1.6;
+
+}
+
+header {
+    background-color: #031b33c5; /* Dark Blue */
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    min-height: 50px;
+}
+
+.nav-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* Hamburger Active State */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-7px, -7px);
+}
+
+header h3 {
+    font-weight: normal; 
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+}
+
+/* Nav Link Effects */
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s; 
+    font-size: 0.95rem; 
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #003366; 
+    color: #ffcc00; 
+}
+
+
+/* Page 1 */
+/* Tagline */
+#tagline {
+background-color: #dfe6e9;
+padding: 30px 10px;
+}
+#tagline h1 {
+color: #2d3436;
+font-size: 26px;
+}
+/* Intro Image */
+.intro {
+width: 100%;
+overflow: hidden;
+}
+.intro img {
+width: 100%;
+
+height: auto;
+display: block;
+}
+/* Brand Description */
+.brand-description {
+padding: 40px 20px;
+background-color: #ffffff;
+}
+.brand-description h2 {
+font-size: 20px;
+color: #34495e;
+margin: 10px 0;
+}
+/* Featured Cars */
+.featured-cars {
+background-color: #ecf0f1;
+padding: 40px 20px;
+text-align: center;
+}
+.featured-cars h2 {
+font-size: 24px;
+margin-bottom: 30px;
+color: #2c3e50;
+}
+.featured-cars img {
+border-radius: 8px;
+margin-bottom: 10px;
+}
+.featured-cars a {
+text-decoration: none;
+color: #2980b9;
+font-weight: bold;
+}
+.featured-cars a:hover {
+color: #d35400;
+}
+
+
+/* Why Choose Us */
+.why-choose-us {
+background-color: #ffffff;
+padding: 40px 20px;
+}
+.why-choose-us h2 {
+text-align: center;
+font-size: 24px;
+margin-bottom: 20px;
+color: #2d3436;
+}
+.why-choose-us ul {
+max-width: 800px;
+margin: auto;
+padding-left: 20px;
+}
+.why-choose-us li {
+margin: 10px 0;
+font-size: 18px;
+}
+
+/* Customer Reviews */
+.customer-reviews {
+background-color: #f8f9fa;
+padding: 40px 20px;
+}
+.customer-reviews h2 {
+font-size: 24px;
+color: #2d3436;
+margin-bottom: 30px;
+}
+.customer-reviews td {
+width: 30%;
+padding: 20px;
+font-style: italic;
+color: #636e72;
+}
+
+/* Featured Cars */
+.featured-cars {
+    background-color: #ecf0f1;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.featured-cars h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.featured-cars img {
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.featured-cars a {
+    text-decoration: none;
+    color: #2980b9;
+    font-weight: bold;
+}
+
+.featured-cars a:hover {
+    color: #d35400;
+}
+
+/* Why Choose Us */
+.why-choose-us {
+    background-color: #ffffff;
+    padding: 40px 20px;
+}
+
+.why-choose-us h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2d3436;
+}
+
+.why-choose-us ul {
+    max-width: 800px;
+    margin: auto;
+    padding-left: 20px;
+}
+
+.why-choose-us li {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+
+/* Customer Reviews */
+.customer-reviews {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+}
+
+.customer-reviews h2 {
+    font-size: 24px;
+    color: #2d3436;
+    margin-bottom: 30px;
+}
+
+.customer-reviews td {
+    width: 30%;
+    padding: 20px;
+    font-style: italic;
+    color: #636e72;
+}
+
+
+
+/*Forget password  */
+.form-section {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #ccc;
+    login-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #1a237e;
+    box-shadow: 0 0 6px #1a237e66;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #3949ab;
+}
+
+/* Signup */
+.signup-container {
+    max-width: 450px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(42, 11, 217, 0.31);
+    text-align: center;
+}
+
+.signup-container h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #333;
+}
+
+.signup-container h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input {
+    border-color: #007bff;
+    outline: none;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #0056b3;
+}
+
+/* forgetpasswprd */
+.form-section {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 10px;
+     box-shadow: 0 4px 10px rgba(42, 11, 217, 0.31);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #ccc;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+
+
+.login-container .btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 25px;
+}
+
+.btn-login:hover {
+    background-color: #3949ab;
+    /* lighter navy */
+}
+
+/* Login page */
+.mainLogin {
+    width: 100%;
+    height: 100%;
+}
+
+.login-container {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.login-container {
+    max-width: 450px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(35, 76, 239, 0.1);
+    text-align: center;
+
+}
+
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: linear-gradient(blue, white, green);
+    color: rgb(176, 98, 98);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+.btn-login {
+    background-image: linear-gradient(to right, #000428 0%, #004e92 51%, #000428 100%)
+}
+
+.btn-login {
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+}
+
+.btn-login:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
+#extra-links {
+    margin-top: 20px;
+
+}
+
+#extra-links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#extra-links a:hover {
+    text-decoration: none;
+    color: #0427a6;
+    font-size: 1.1rem;
+    font-weight: 510;
+}
+
+
+
+
+
+
+
+/* Page 3  */
+.service-links nav {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.service-links nav a {
+    color: #1a73e8;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.service-links nav a:hover {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.service-table table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 30px;
+}
+
+.service-table td {
+    vertical-align: middle;
+    padding: 0 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+.service-table h3 {
+    color: #1a237e;
+    /* deep blue */
+    margin-bottom: 12px;
+}
+
+.service-table p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #444;
+}
+
+.service-table img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(26, 115, 232, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.service-table img:hover {
+    transform: scale(1.05);
+}
+
+
+/* PAge 3 -FAQ Container */
+.FAQ {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* FAQ Title */
+.FAQ h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #040d73;
+    margin-bottom: 30px;
+}
+
+/* Hide checkbox used for toggling */
+.faq-item input[type="checkbox"] {
+    display: none;
+}
+
+/* Questions */
+.question {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    padding: 15px 20px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px solid #ccc;
+}
+
+.question:hover {
+    background-color: #e0e0e0;
+}
+
+/* Answers */
+.answer {
+    display: none;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border-left: 4px solid #040d73;
+    border-radius: 0 0 6px 6px;
+    margin-top: -6px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.faq-item input:checked + .question + .answer {
+    display: block;
+}
+
+/* Paragraphs in answers */
+.FAQ p {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Lists inside answer */
+.FAQ ul {
+    margin-left: 25px;
+    padding-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.FAQ ul li {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.6;
+    list-style-type: disc;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+
+/* page 4 */
+.testdrive-head {
+    text-align: center;
+    margin: 30px 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.testdrive-head h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Test drive video styling */
+.test-drive-video {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.test-drive-video video {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .test-drive-video {
+        max-width: 95%;
+    }
+}
+
+
+
+
+/* For all Forms */
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10;
+    border-radius: 15px;
+    margin-top: 10
+}
+
+.form {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f3f3f3;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(42, 11, 217, 0.31);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* Confirmation page */
+.confirmation-section {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a1a1a;
+}
+
+.confirmation-section img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.confirmation-section h2 {
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 1.3rem;
+}
+
+
+
+
+
+
+/* Page 5 */
+.comparison-section h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #1a237e;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.compare-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.compare-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.compare-table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    vertical-align: middle;
+    text-align: center;
+    /* Center text for simple attractive look */
+}
+
+.compare-table tr:nth-child(even) td {
+    background-color: #e0e7ff;
+    /* Light blue */
+}
+
+.compare-table tr:nth-child(odd) td {
+    background-color: #f5f8ff;
+    /* Very light blue */
+}
+
+.compare-table img {
+    width: 280px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 5px;
+}
+
+.compare-table h3 {
+    margin: 0 0 8px;
+    color: #1a237e;
+    font-weight: bold;
+}
+
+
+
+
+
+/* Page 6 */
+/* Offer */
+
+
+
+/* PAge -7 Reamining */
+.emi-calculator {
+  width: 350px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+}
+
+.emi-calculator h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #000;
+}
+
+.emi-calculator label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #000;
+}
+
+.emi-calculator input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  font-size: 14px;
+  border: 1px solid #999;
+  box-sizing: border-box;
+   border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(42, 11, 217, 0.31);
+}
+
+.emi-calculator button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  background-color: #040d73;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.emi-calculator .result {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #bbb;
+  font-size: 14px;
+  color: #000;
+     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(42, 11, 217, 0.31);
+}
+
+
+
+
+
+
+/* Page -8  */
+.review- table {
+  margin: 0 auto;
+    border-spacing: 30px 30px;
+   
+}
+
+
+.review-table img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+
+
+
+/* Page 9 */
+
+
+/* Footer */
+
+footer {
+    background-color: #333; 
+    color: white;
+    padding: 20px 0;
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;
+    clear: both;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #b0c4de; 
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s;
+    display: inline-block;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+    color: #ffffff; 
+    text-decoration: underline;
+}
+
+
+
+
+
+
+                                                        /* BAckend */
+
+/* Mobile Responsive - Hamburger Menu */
+@media (max-width: 768px) {
+    /* Header & Navigation */
+    .hamburger {
+        display: flex;
+    }
+
+    header {
+        position: relative;
+        padding: 10px 0;
+    }
+
+    .nav-bar {
+        padding: 0 15px;
+    }
+
+    nav {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #031b33c5;
+        flex-direction: column;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        z-index: 999;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav.active {
+        max-height: 400px;
+        padding: 20px 0;
+        overflow-y: auto;
+    }
+
+    nav h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        padding: 15px 20px !important;
+        text-align: center;
+        margin: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+    }
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+
+    /* Tagline */
+    #tagline {
+        padding: 20px 15px;
+    }
+
+    #tagline h1 {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    /* Brand Description */
+    .brand-description {
+        padding: 20px 15px;
+    }
+
+    .brand-description h2 {
+        font-size: 16px;
+        margin: 8px 0;
+        line-height: 1.4;
+    }
+
+    /* Featured Cars */
+    .featured-cars {
+        padding: 20px 15px;
+    }
+
+    .featured-cars h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .featured-cars table {
+        width: 100%;
+        border-spacing: 0;
+    }
+
+    .featured-cars td {
+        width: 100% !important;
+        display: block;
+        padding: 15px 0 !important;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .featured-cars tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .featured-cars img {
+        width: 150px;
+        height: 100px;
+        margin: 0 auto 10px;
+    }
+
+    .featured-cars a {
+        font-size: 0.9rem;
+        display: inline-block;
+        padding: 8px 12px;
+        background-color: #2980b9;
+        color: white;
+        border-radius: 4px;
+    }
+
+    /* Why Choose Us */
+    .why-choose-us {
+        padding: 20px 15px;
+    }
+
+    .why-choose-us h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .why-choose-us ul {
+        max-width: 100%;
+        padding-left: 15px;
+    }
+
+    .why-choose-us li {
+        font-size: 14px;
+        margin: 8px 0;
+    }
+
+    /* Customer Reviews */
+    .customer-reviews {
+        padding: 20px 15px;
+    }
+
+    .customer-reviews h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .customer-reviews table {
+        width: 100%;
+        border-spacing: 0;
+    }
+
+    .customer-reviews td {
+        width: 100% !important;
+        display: block;
+        padding: 15px 0 !important;
+        border-bottom: 1px solid #ddd;
+        font-size: 13px;
+    }
+
+    .customer-reviews tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .review-table img {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 10px;
+        display: block;
+    }
+
+    /* Forms */
+    .form-section {
+        max-width: 100%;
+        margin: 20px 15px;
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    textarea,
+    select {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .btn-login,
+    button[type="submit"] {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 15px 0;
+        margin-top: 30px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-links a {
+        font-size: 0.8rem;
+        display: block;
+        padding: 8px 5px;
+        width: 100%;
+    }
+
+    .footer-content {
+        padding: 0 10px;
+    }
+
+    /* Main Content */
+    main {
+        padding: 0;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    /* General spacing adjustments */
+    section {
+        padding: 15px 0;
+    }
+
+    h1 {
+        font-size: 18px !important;
+    }
+
+    h2 {
+        font-size: 16px !important;
+    }
+
+    h3 {
+        font-size: 14px !important;
+    }
+
+    p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    td, th {
+        padding: 8px 5px !important;
+    }
+
+    /* Comparison Section Mobile */
+    .comparison-section h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        padding: 0 15px;
+    }
+
+    .compare-banner {
+        padding: 0 15px;
+    }
+
+    .compare-banner img {
+        width: 100px;
+        height: auto;
+        margin: 0 auto 15px;
+    }
+
+    .compare-table {
+        padding: 0 15px;
+    }
+
+    .compare-table table {
+        font-size: 12px;
+    }
+
+    .compare-table td {
+        padding: 10px 8px !important;
+        border: 1px solid #ccc;
+    }
+
+    .compare-table img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        margin: 0 auto 8px;
+    }
+
+    .compare-table h3 {
+        font-size: 14px;
+        margin: 0 0 8px;
+    }
+}
+
+/* Tablet and up */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+
+    nav {
+        display: flex !important;
+        max-height: none !important;
+        position: static !important;
+        width: auto !important;
+        background-color: transparent !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+
+    nav h3 {
+        display: flex;
+        margin: 0;
+    }
+}

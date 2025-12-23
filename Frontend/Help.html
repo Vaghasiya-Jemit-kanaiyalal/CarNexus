@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Help & FAQ</title>
+    <style>/* style.css */
+
+/* === GLOBAL STYLES (Keep these for consistency) === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+/* === HEADER AND NAV STYLES (Your preferred style) === */
+header {
+    background-color: #004d99; /* Dark Blue */
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header h3 {
+    font-weight: normal; 
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+}
+
+/* Nav Link Effects */
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s; 
+    font-size: 0.95rem; 
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #003366; 
+    color: #ffcc00; 
+}
+
+/* === MAIN CONTENT LAYOUT === */
+main {
+    max-width: 900px; /* Narrower width is often better for text-heavy pages */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.help-container h1 {
+    color: #cc0000; 
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #004d99;
+}
+
+.help-container h2 {
+    color: #004d99;
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* === FAQ SECTION STYLES (Accordion Look) === */
+.faq-item {
+    background-color: white;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.faq-question {
+    background-color: #e6f0ff; /* Light Blue background */
+    color: #003366;
+    padding: 15px;
+    margin: 0;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-left: 5px solid #ffcc00; /* Accent color */
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #dae8ff;
+}
+
+.faq-answer {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    /* Optional: Hide/Show effect can be done with JavaScript */
+}
+
+.faq-answer p {
+    margin-bottom: 0;
+}
+
+.faq-answer a {
+    color: #cc0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.faq-answer a:hover {
+    text-decoration: underline;
+}
+
+/* === CONTACT SUPPORT SECTION === */
+.contact-support {
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Ensure cards stack on small screens */
+}
+
+.contact-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    border-top: 5px solid #cc0000;
+}
+
+.contact-card h4 {
+    color: #004d99;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.contact-link {
+    display: inline-block;
+    background-color: #cc0000;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.contact-link:hover {
+    background-color: #a80000;
+}
+
+/* === FOOTER STYLES (Your preferred style) === */
+footer {
+    background-color: #333; 
+    color: white;
+    padding: 20px 0;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer nav h3 {
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+footer nav a {
+    color: #b0c4de; 
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px;
+    transition: color 0.3s;
+    display: inline-block;
+}
+
+footer nav a:hover,
+footer nav a:focus {
+    color: #ffffff; 
+    text-decoration: underline;
+}</style>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav-bar">
+            <nav>
+                <h3>
+                    <a href="../index.html" target="_blank">Home</a>
+                    <a href="2CARS.html">Cars</a>
+                    <a href="3Service.html">Service</a>
+                    <a href="4Testdrive.html">Test-Drive</a>
+                    <a href="5Compare.html">Compare</a>
+                    <a href="6Offers.html">Offers</a>
+                    <a href="7EMI.html">EMI-calculate</a>
+                    <a href="8Review.html">Reviews</a>
+                    <a href="9Location.html">Locations</a>
+                </h3>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="help-container">
+            <h1>Need Assistance? We're Here to Help!</h1>
+
+            <section class="faq-section">
+                <h2>Frequently Asked Questions (FAQ)</h2>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">How do I book a test drive?</h3>
+                    <div class="faq-answer">
+                        <p>Go to the <a href="4Testdrive.html">Test-Drive</a> page, select your preferred car model and dealership location, and fill out the form. A representative will contact you shortly to confirm the appointment.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What documents are required for car financing?</h3>
+                    <div class="faq-answer">
+                        <p>Typically, we require proof of identity (Aadhaar/Passport), proof of address, income documents (salary slips/bank statements), and PAN card. Specific requirements may vary based on the loan amount and model.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Where can I find current offers and discounts?</h3>
+                    <div class="faq-answer">
+                        <p>All our latest seasonal and model-specific offers are listed on the <a href="6Offers.html">Offers</a> page. We update this section monthly, so check back often!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">How can I calculate my EMI?</h3>
+                    <div class="faq-answer">
+                        <p>Visit the <a href="7EMI.html">EMI-calculate</a> page to use our simple calculator. Input the loan amount, interest rate, and tenure to get an instant estimate.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-support">
+                <h2>Still Can't Find What You Need?</h2>
+                <div class="contact-info">
+                    <p>For urgent assistance, please use one of the options below:</p>
+                    <div class="contact-card">
+                        <h4>✉️ Email Support</h4>
+                        <p>Send us an email anytime and we'll respond within 24 hours.</p>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dealerindia280@gmail.com" target="_blank" class="contact-link">Email Us Now</a>
+                    </div>
+                    <div class="contact-card">
+                        <h4>📞 Call Us</h4>
+                        <p>Call our support desk during business hours (9 AM - 6 PM).</p>
+                        <p>+91 123456789</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <nav>
+                <h3>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dealerindia280@gmail.com" target="_blank">
+                        dealerindia280@gmail.com
+                    </a>
+                    <a href="Aboutus.html">About us /Contact us</a>
+                    <a href="Help.html">Help</a>
+                </h3>
+            </nav>
+        </div>
+    </footer>
+    <script src="web.js"></script>
+</body>
+
+</html>

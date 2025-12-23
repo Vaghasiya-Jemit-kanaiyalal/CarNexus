@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Drive Booking</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="nav-bar">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="nav-menu">
+                <h3>
+                    <a href="../index.html" target="_blank">Home</a>
+                    <a href="2CARS.html">Cars</a>
+                    <a href="3Service.html">Service</a>
+                    <a href="4Testdrive.html">Test-Drive</a>
+                    <a href="5Compare.html">Compare</a>
+                    <a href="6Offers.html">Offers</a>
+                    <a href="7EMI.html">EMI-calculate</a>
+                    <a href="8Review.html">Reviews</a>
+                    <a href="9Location.html">Locations</a>
+                </h3>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="testdrive-head">
+            <h1>Ready to Roll? Book a Test Drive Today.</h1>
+
+            <div class="test-drive-video">
+                <video controls autoplay muted loop>
+                    <source src="../Video/Test.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="form">
+                <form id="TestDriveForm" action="../Backend/addTestdrive.php" method="post">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" placeholder="Enter your phone number" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="car">Select Car Model</label>
+                        <select id="car" name="car" required style="height: 25px;">
+                            <option value="">-- Choose Model --</option>
+                            <option value="Innova">Innova</option>
+                            <option value="Fortuner">Fortuner</option>
+                            <option value="Glanza">Glanza</option>
+                            <option value="Camry">Camry</option>
+                            <option value="Urban Cruiser">Urban Cruiser</option>
+                            <option value="Vellfire">Vellfire</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Preferred Test Drive Date</label>
+                        <input type="date" id="date" name="date" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Preferred Location</label>
+                        <input type="text" id="location" name="location" placeholder="Enter city or showroom name"
+                            required />
+                    </div>
+
+                    <button type="submit" class="btn-login" value="submit">Submit</button>
+                </form>
+            </div>
+
+
+
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="mailto:dealerindia280@gmail.com" target="_blank">dealerindia280@gmail.com</a>
+            <a href="Aboutus.html">About us / Contact us</a>
+            <a href="Help.html">Help</a>
+        </div>
+    </footer>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
+</script>
+
+</body>
+
+</html>

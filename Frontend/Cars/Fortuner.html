@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toyota Fortuner Info</title>
+  <link rel="stylesheet" href="cars.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav-bar">
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="nav-menu">
+        <h3>
+          <a href="../../index.html">Home</a>
+          <a href="../2CARS.html">Cars</a>
+          <a href="../3Service.html">Service</a>
+          <a href="../4Testdrive.html">Test-Drive</a>
+          <a href="../5Compare.html">Compare</a>
+          <a href="../6Offers.html">Offers</a>
+          <a href="../7EMI.html">EMI-calculate</a>
+          <a href="../8Review.html">Reviews</a>
+          <a href="../9Location.html">Locations</a>
+        </h3>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-layout">
+    <section class="features">
+      <h3>🚗 Toyota Fortuner Legender - Features</h3>
+      <ul>
+        <li>2.8L Diesel engine with 204 PS power</li>
+        <li>6-speed auto gearbox with paddle shifters</li>
+        <li>Sporty dual-tone roof and bold grille</li>
+        <li>Ventilated front seats and powered driver seat</li>
+        <li>Connected car tech and smartphone alerts</li>
+        <li>LED headlamps with DRLs and follow-me-home</li>
+        <li>10.1-inch touchscreen with navigation support</li>
+        <li>Wireless charging pad for phones</li>
+        <li>7 airbags with vehicle stability control</li>
+        <li>Hill hold, downhill assist, traction control</li>
+        <li>Rain-sensing wipers and auto headlamps</li>
+        <li>Premium leather upholstery and black theme</li>
+      </ul>
+    </section>
+
+    <section class="model-box">
+      <h3>🛠️ Explore Toyota Fortuner in 3D</h3>
+     
+      <model-viewer src="../models/fortuner.glb" alt="Toyota Fortuner 3D Model" camera-controls auto-rotate shadow-intensity="1"></model-viewer>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:dealerindia280@gmail.com" target="_blank">dealerindia280@gmail.com</a>
+      <a href="../Aboutus.html">About us / Contact us</a>
+      <a href="../Help.html">Help</a>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
