@@ -1,4 +1,3 @@
-
 <?php
 include_once('database.php');
 
@@ -10,11 +9,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
     $date = $_POST['date'];
     $location = $_POST['location'];
 
-
     $sql = "INSERT INTO testdrive(Name, Email, Mobile, Car, Date, Location) 
-            VALUES ('$name', '$email', '$mobile', '$car', '$date', '$location')";
+            VALUES (?, ?, ?, ?, ?, ?)";
 
-    if (mysqli_query($conn, $sql)) {
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "ssssss", $name, $email, $mobile, $car, $date, $location);
+
+    if (mysqli_stmt_execute($stmt)) {
+        mysqli_stmt_close($stmt);
         header("Location: ../Frontend/Confirmation.html");
         exit();
     } else {

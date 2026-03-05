@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$username', '$email', '$hashedPassword')";
 
     if (mysqli_query($conn, $sql)) {
+        // on successful signup, redirect to homepage with a success flag
         header("Location: ../Frontend/1index.html?success=1");
         exit();
     } else {

@@ -9,9 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
     $issue = $_POST['issue'];
 
     $sql = "INSERT INTO service(Name, Email, Mobile, Address, Issue) 
-            VALUES ('$name', '$email', '$mobile', '$address',  '$issue')";
+            VALUES (?, ?, ?, ?, ?)";
 
-    if (mysqli_query($conn, $sql)) {
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "sssss", $name, $email, $mobile, $address, $issue);
+
+    if (mysqli_stmt_execute($stmt)) {
+        mysqli_stmt_close($stmt);
         header("Location: ../Frontend/Confirmation.html");
         exit();
 
