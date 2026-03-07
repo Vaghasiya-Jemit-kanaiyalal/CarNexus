@@ -1,10 +1,19 @@
 <?php
+
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
+
 include_once('database.php');
 
-if ($_SERVER["REQUEST_METHOD"] == "OPTIONS" ) {
+// Handle CORS preflight request
+if ($_SERVER["REQUEST_METHOD"] == "OPTIONS") {
+    exit(0);
+}
+
+// Handle actual form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $name = $_POST['name'];
     $email = $_POST['email'];
     $mobile = $_POST['mobile'];
@@ -19,11 +28,19 @@ if ($_SERVER["REQUEST_METHOD"] == "OPTIONS" ) {
     mysqli_stmt_bind_param($stmt, "ssssss", $name, $email, $mobile, $car, $date, $location);
 
     if (mysqli_stmt_execute($stmt)) {
+
         mysqli_stmt_close($stmt);
-       header("Location: https://carnexus.netlify.app/Frontend/Confirmation.html");
-exit();
+
+        echo json_encode([
+            "status" => "success",
+            "message" => "Test drive booked"
+        ]);
+
     } else {
-        echo "<p style='color:red; text-align:center;'> There is some Error: " . mysqli_error($conn) . "</p>";
+        echo json_encode([
+            "status" => "error",
+            "message" => mysqli_error($conn)
+        ]);
     }
 }
 ?>
