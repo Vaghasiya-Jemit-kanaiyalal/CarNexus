@@ -44,7 +44,7 @@
             </div>
 
             <div class="form">
-                <form id="TestDriveForm" action="https://carnexus-7shf.onrender.com/Backend/addTestdrive.php" method="post">
+                <form id="TestDriveForm" method="post">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Enter your name" required />
@@ -101,6 +101,26 @@
     </footer>
 
 <script>
+    document.getElementById("testDriveForm").addEventListener("submit", function(e){
+
+    e.preventDefault();   // stops page navigation
+
+    const formData = new FormData(this);
+
+    fetch("https://carnexus-7shf.onrender.com/Backend/addTestdrive.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        window.location.href = "/Frontend/Confirmation.html";
+    })
+    .catch(error => {
+        alert("Something went wrong");
+    });
+
+});
+
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
 
