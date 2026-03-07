@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Toyota Camry Info</title>
   <link rel="stylesheet" href="cars.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
   <header>
@@ -46,13 +47,19 @@
         <li>Powered boot and smart entry system</li>
         <li>Head-up display and ambient console</li>
         <li>Available in 5 exterior color options</li>
+        <li><h6>Credits to 3d modeler: Taken from Skecthfab & author : ItsDiyor</h6></li>
       </ul>
     </section>
 
     <section class="model-box">
-      <h3>Toyota Camry</h3>
-      <img src="https://vehicle-images.dealerinspire.com/080e-110005342/thumbnails/large/4T1DAACK3SU625856/1b7ca22889a50de3ad80db9d00a1f928.png
-" alt="Toyota Camry" style="width:100%; border-radius:10px;">
+      <h3>🛠️ Explore Toyota Camry in 3D</h3>
+      <model-viewer
+        src="../models/camry.glb"
+        alt="Toyota Camry 3D Model"
+        camera-controls
+        auto-rotate
+        shadow-intensity="1">
+      </model-viewer>
     </section>
   </main>
 
@@ -83,3 +90,5 @@
 
 </body>
 </html>
+
+<!-- Taken from Skecthfab & author : ItsDiyor -->

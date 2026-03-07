@@ -37,39 +37,50 @@
     <!-- Main Content -->
     <main>
         <div class="comparison-section">
-            <h2 align="center">Comparison of Best Selling Cars</h2>
+            <h2 align="center">Compare Your Favourite Toyota Cars</h2>
 
             <div class="compare-banner">
                 <img src="/photo/Compare.png"
                      height="100px" width="100px" alt="Car Compare">
             </div>
 
+            <div class="compare-controls">
+                <div>
+                    <label for="carA">Select First Car:</label>
+                    <select id="carA" class="compare-select"></select>
+                </div>
+                <div>
+                    <label for="carB">Select Second Car:</label>
+                    <select id="carB" class="compare-select"></select>
+                </div>
+            </div>
+
             <div class="compare-table">
-                <table width="100%" cellpadding="20">
+                <table width="100%" cellpadding="20" id="compareTable">
                     <tr>
-                        <td align="center" width="50%">
+                        <td align="center" width="50%" id="cell-image-a">
                             <img src="/photo/Fortuner.png"
                                  width="300" alt="Toyota Fortuner">
-                            <h3>Toyota Fortuner</h3>
+                            <h3 id="nameA">Toyota Fortuner</h3>
                         </td>
 
-                        <td align="center" width="50%">
+                        <td align="center" width="50%" id="cell-image-b">
                             <img src="/photo/Crysta.png"
                                  width="300" alt="Toyota Innova Crysta">
-                            <h3>Toyota Innova Crysta</h3>
+                            <h3 id="nameB">Toyota Innova Crysta</h3>
                         </td>
                     </tr>
 
-                    <tr><td><b>Price:</b> ₹35 Lakh (ex-showroom)</td><td><b>Price:</b> ₹20 Lakh (ex-showroom)</td></tr>
-                    <tr><td><b>Engine:</b> 2.8L Diesel, 201 hp</td><td><b>Engine:</b> 2.4L Diesel, 148 hp</td></tr>
-                    <tr><td><b>Transmission:</b> Automatic</td><td><b>Transmission:</b> Manual</td></tr>
-                    <tr><td><b>Mileage:</b> 10 km/l</td><td><b>Mileage:</b> 12 km/l</td></tr>
-                    <tr><td><b>Seating Capacity:</b> 7 Seater</td><td><b>Seating Capacity:</b> 7 Seater</td></tr>
-                    <tr><td><b>Boot Space:</b> 296 Litres</td><td><b>Boot Space:</b> 300 Litres</td></tr>
-                    <tr><td><b>Safety:</b> 7 Airbags, ABS, EBD, Hill Assist</td><td><b>Safety:</b> 3 Airbags, ABS, EBD</td></tr>
-                    <tr><td><b>Infotainment:</b> 8-inch Touchscreen, Android Auto, Apple CarPlay</td><td><b>Infotainment:</b> 7-inch Touchscreen, USB, Bluetooth</td></tr>
-                    <tr><td><b>Fuel Type:</b> Diesel</td><td><b>Fuel Type:</b> Diesel</td></tr>
-                    <tr><td><b>Highlights:</b> LED Projector Headlamps, 4x4 Option, Premium Leather Seats</td><td><b>Highlights:</b> Captain Seats, Smart Entry, Cruise Control</td></tr>
+                    <tr><td id="priceA"><b>Price:</b> ₹35 Lakh (ex-showroom)</td><td id="priceB"><b>Price:</b> ₹20 Lakh (ex-showroom)</td></tr>
+                    <tr><td id="engineA"><b>Engine:</b> 2.8L Diesel, 201 hp</td><td id="engineB"><b>Engine:</b> 2.4L Diesel, 148 hp</td></tr>
+                    <tr><td id="transmissionA"><b>Transmission:</b> Automatic</td><td id="transmissionB"><b>Transmission:</b> Manual</td></tr>
+                    <tr><td id="mileageA"><b>Mileage:</b> 10 km/l</td><td id="mileageB"><b>Mileage:</b> 12 km/l</td></tr>
+                    <tr><td id="seatingA"><b>Seating Capacity:</b> 7 Seater</td><td id="seatingB"><b>Seating Capacity:</b> 7 Seater</td></tr>
+                    <tr><td id="bootA"><b>Boot Space:</b> 296 Litres</td><td id="bootB"><b>Boot Space:</b> 300 Litres</td></tr>
+                    <tr><td id="safetyA"><b>Safety:</b> 7 Airbags, ABS, EBD, Hill Assist</td><td id="safetyB"><b>Safety:</b> 3 Airbags, ABS, EBD</td></tr>
+                    <tr><td id="infotainmentA"><b>Infotainment:</b> 8-inch Touchscreen, Android Auto, Apple CarPlay</td><td id="infotainmentB"><b>Infotainment:</b> 7-inch Touchscreen, USB, Bluetooth</td></tr>
+                    <tr><td id="fuelA"><b>Fuel Type:</b> Diesel</td><td id="fuelB"><b>Fuel Type:</b> Diesel</td></tr>
+                    <tr><td id="highlightsA"><b>Highlights:</b> LED Projector Headlamps, 4x4 Option, Premium Leather Seats</td><td id="highlightsB"><b>Highlights:</b> Captain Seats, Smart Entry, Cruise Control</td></tr>
                 </table>
             </div>
         </div>
@@ -104,6 +115,166 @@
                 hamburger.classList.remove('active');
             });
         });
+
+        // Car data for comparison (taken from cars in the showroom)
+        const CAR_DATA = {
+            "Fortuner": {
+                name: "Toyota Fortuner Legender",
+                image: "/photo/Fortuner.png",
+                price: "₹43.22 Lakh (ex-showroom)",
+                engine: "2.8L Diesel, ~200 hp",
+                transmission: "Automatic",
+                mileage: "10 km/l (approx.)",
+                seating: "7 Seater",
+                boot: "296 Litres (approx.)",
+                safety: "7 Airbags, ABS, EBD, Hill Assist",
+                infotainment: "8-inch Touchscreen, Android Auto, Apple CarPlay",
+                fuel: "Diesel",
+                highlights: "LED Projector Headlamps, 4x4 Option, Premium Leather Seats"
+            },
+            "Innova Crysta": {
+                name: "Toyota Innova Crysta",
+                image: "/photo/Crysta.png",
+                price: "₹19.99 Lakh (ex-showroom)",
+                engine: "2.4L Diesel, 148 hp",
+                transmission: "Manual",
+                mileage: "15 km/l (approx.)",
+                seating: "7 / 8 Seater",
+                boot: "300 Litres (approx.)",
+                safety: "3 Airbags, ABS, EBD",
+                infotainment: "Touchscreen, Bluetooth, USB",
+                fuel: "Diesel",
+                highlights: "Captain Seats, Smart Entry, Cruise Control"
+            },
+            "Innova Hycross": {
+                name: "Toyota Innova HyCross",
+                image: "/photo/Hycross.png",
+                price: "₹25.30 Lakh (ex-showroom)",
+                engine: "2.0L Strong Hybrid",
+                transmission: "e-CVT Automatic",
+                mileage: "21 km/l (claimed)",
+                seating: "7 Seater",
+                boot: "300+ Litres (approx.)",
+                safety: "6 Airbags, ABS, EBD, ADAS (higher variants)",
+                infotainment: "Touchscreen with connected tech",
+                fuel: "Hybrid",
+                highlights: "Premium MPV, captain seats, panoramic roof (top variant)"
+            },
+            "Vellfire": {
+                name: "Toyota Vellfire",
+                image: "/photo/Vellfire.png",
+                price: "₹1.20 Cr (ex-showroom)",
+                engine: "2.5L Strong Hybrid",
+                transmission: "e-CVT Automatic",
+                mileage: "19 km/l (claimed)",
+                seating: "7 Seater Luxury MPV",
+                boot: "Large premium MPV boot",
+                safety: "Multiple Airbags, Toyota Safety Sense, ADAS",
+                infotainment: "Premium audio, rear screens (variant dependent)",
+                fuel: "Hybrid",
+                highlights: "Ottoman seats, lounge-like cabin, powered doors"
+            },
+            "Camry": {
+                name: "Toyota Camry",
+                image: "https://vehicle-images.dealerinspire.com/080e-110005342/thumbnails/large/4T1DAACK3SU625856/1b7ca22889a50de3ad80db9d00a1f928.png",
+                price: "₹46.17 Lakh (ex-showroom)",
+                engine: "2.5L Strong Hybrid Petrol",
+                transmission: "e-CVT Automatic",
+                mileage: "19–22 km/l (claimed)",
+                seating: "5 Seater",
+                boot: "Good sedan boot space",
+                safety: "Multiple Airbags, ABS, EBD, advanced safety features",
+                infotainment: "Touchscreen, JBL audio (variant dependent)",
+                fuel: "Hybrid",
+                highlights: "Executive luxury sedan, premium interiors"
+            },
+            "Rumion": {
+                name: "Toyota Rumion",
+                image: "/photo/Rumion.png",
+                price: "₹10.29 Lakh (ex-showroom)",
+                engine: "1.5L Petrol / CNG",
+                transmission: "Manual / Automatic (petrol variants)",
+                mileage: "CNG ~26 km/kg (claimed)",
+                seating: "7 Seater MPV",
+                boot: "Flexible with foldable seats",
+                safety: "Dual Airbags, ABS, EBD (variant dependent)",
+                infotainment: "Touchscreen, Android Auto, Apple CarPlay (higher variants)",
+                fuel: "CNG / Petrol",
+                highlights: "Practical family MPV with CNG option"
+            },
+            "Hilux": {
+                name: "Toyota Hilux",
+                image: "/photo/Hillux.png",
+                price: "₹30.40 Lakh (ex-showroom)",
+                engine: "2.8L Diesel",
+                transmission: "Manual / Automatic (variant dependent)",
+                mileage: "Approx. 12 km/l",
+                seating: "5 Seater (double-cab)",
+                boot: "Large pickup bed",
+                safety: "Multiple Airbags, ABS, EBD, traction control",
+                infotainment: "Touchscreen infotainment",
+                fuel: "Diesel",
+                highlights: "Pickup lifestyle truck with strong off-road ability"
+            }
+        };
+
+        const selectA = document.getElementById("carA");
+        const selectB = document.getElementById("carB");
+
+        function populateDropdowns() {
+            const carNames = Object.keys(CAR_DATA);
+            carNames.forEach(name => {
+                const optA = document.createElement("option");
+                optA.value = name;
+                optA.textContent = CAR_DATA[name].name;
+                selectA.appendChild(optA);
+
+                const optB = document.createElement("option");
+                optB.value = name;
+                optB.textContent = CAR_DATA[name].name;
+                selectB.appendChild(optB);
+            });
+
+            // Default selection: Fortuner vs Innova Crysta
+            selectA.value = "Fortuner";
+            selectB.value = "Innova Crysta";
+            updateComparison();
+        }
+
+        function updateColumn(prefix, carKey) {
+            const data = CAR_DATA[carKey];
+            if (!data) return;
+
+            document.getElementById("name" + prefix).textContent = data.name;
+            document.getElementById("price" + prefix).innerHTML = "<b>Price:</b> " + data.price;
+            document.getElementById("engine" + prefix).innerHTML = "<b>Engine:</b> " + data.engine;
+            document.getElementById("transmission" + prefix).innerHTML = "<b>Transmission:</b> " + data.transmission;
+            document.getElementById("mileage" + prefix).innerHTML = "<b>Mileage:</b> " + data.mileage;
+            document.getElementById("seating" + prefix).innerHTML = "<b>Seating Capacity:</b> " + data.seating;
+            document.getElementById("boot" + prefix).innerHTML = "<b>Boot Space:</b> " + data.boot;
+            document.getElementById("safety" + prefix).innerHTML = "<b>Safety:</b> " + data.safety;
+            document.getElementById("infotainment" + prefix).innerHTML = "<b>Infotainment:</b> " + data.infotainment;
+            document.getElementById("fuel" + prefix).innerHTML = "<b>Fuel Type:</b> " + data.fuel;
+            document.getElementById("highlights" + prefix).innerHTML = "<b>Highlights:</b> " + data.highlights;
+
+            const imageCellId = prefix === "A" ? "cell-image-a" : "cell-image-b";
+            const cell = document.getElementById(imageCellId);
+            const img = cell.querySelector("img");
+            img.src = data.image;
+            img.alt = data.name;
+        }
+
+        function updateComparison() {
+            const carKeyA = selectA.value;
+            const carKeyB = selectB.value;
+            updateColumn("A", carKeyA);
+            updateColumn("B", carKeyB);
+        }
+
+        selectA.addEventListener("change", updateComparison);
+        selectB.addEventListener("change", updateComparison);
+
+        document.addEventListener("DOMContentLoaded", populateDropdowns);
     </script>
 </body>
 
