@@ -1,14 +1,16 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "Root@280";
-$db = "Toyota";
 
+require "env_loader.php";
 
-$conn = mysqli_connect($servername, $username, $password, $db);
+$host = $_ENV['DB_HOST'];
+$user = $_ENV['DB_USER'];
+$password = $_ENV['DB_PASS'];
+$dbname = $_ENV['DB_NAME'];
 
-if (!$conn) {
-    die("connection failed" . mysqli_connect_error());
+$conn = mysqli_connect($host,$user,$password,$dbname);
+
+if(!$conn){
+    die("Database connection failed: " . mysqli_connect_error());
 }
 
 ?>
