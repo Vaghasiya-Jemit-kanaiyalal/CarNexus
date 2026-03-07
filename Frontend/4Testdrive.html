@@ -101,9 +101,9 @@
     </footer>
 
 <script>
-    document.getElementById("testDriveForm").addEventListener("submit", function(e){
+  document.getElementById("testDriveForm").addEventListener("submit", function(e) {
 
-    e.preventDefault();   // stops page navigation
+    e.preventDefault();
 
     const formData = new FormData(this);
 
@@ -111,12 +111,9 @@
         method: "POST",
         body: formData
     })
-    .then(response => response.text())
-    .then(data => {
-        window.location.href = "https://carnexus.netlify.app/Frontend/Confirmation.html";
-    })
-    .catch(error => {
-        alert("Something went wrong");
+    .then(res => res.text())
+    .then(() => {
+        window.location.href = "/Frontend/Confirmation.html";
     });
 
 });
