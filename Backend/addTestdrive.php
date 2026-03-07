@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 
     if (mysqli_stmt_execute($stmt)) {
         mysqli_stmt_close($stmt);
-       header("Location: /Frontend/Confirmation.html");
+       header("Location: https://carnexus.netlify.app/Frontend/Confirmation.html");
 exit();
     } else {
         echo "<p style='color:red; text-align:center;'> There is some Error: " . mysqli_error($conn) . "</p>";
