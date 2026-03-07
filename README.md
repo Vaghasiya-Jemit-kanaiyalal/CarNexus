@@ -22,7 +22,7 @@ This project is a web-based showroom application for buying, exploring, and serv
 
 Located in the `Backend/` directory:
 
-- `database.php` – database connection helper (if MySQL is added later).
+- `database.php` – database connection helper.
 - Scripts for adding, updating, deleting services/test drives (`addService.php`, `update_service.php`, `delete_service.php`, etc.).
 - `admin_Login.php`, `admin_logout.php`, and `admin_dashboard.php` manage admin authentication and dashboard.
 - `Signup.php` handles user registration.
@@ -43,11 +43,12 @@ All customer-facing HTML in `Frontend/` along with:
 - `style.css`, `cars.css` for styling.
 - `web.js` for interactive behavior.
 - Car-specific pages under `Frontend/Cars/`.
+- `Frontend/models/` for 3D models of specific cars.
 
 ## 📂 Additional Assets
 
 - **Photos**: `/photo` directory for images used across site.
-- **Videos**: `/Video` folder (empty or used for promotional content).
+- **Videos**: `/Video` for testdrive page's video.
 
 
 
