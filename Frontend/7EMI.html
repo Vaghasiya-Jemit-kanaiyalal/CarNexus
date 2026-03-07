@@ -83,24 +83,28 @@
             </div>
         </div>
     </footer>
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
+   <script>
+function calculateEMI() {
+    let loan = document.getElementById("loan").value;
+    let rate = document.getElementById("rate").value;
+    let tenure = document.getElementById("tenure").value;
 
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
+    loan = parseFloat(loan);
+    rate = parseFloat(rate) / 12 / 100;
+    tenure = parseFloat(tenure) * 12;
 
-        // Close menu when a link is clicked
-        const navLinks = navMenu.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
-            });
-        });
-    </script>
+    if (loan && rate && tenure) {
+        let emi = (loan * rate * Math.pow(1 + rate, tenure)) / 
+                  (Math.pow(1 + rate, tenure) - 1);
+
+        document.getElementById("result").innerHTML =
+            "Your Monthly EMI: ₹ " + emi.toFixed(2);
+    } else {
+        document.getElementById("result").innerHTML =
+            "Please enter all values correctly.";
+    }
+}
+</script>
 
 </body>
 
