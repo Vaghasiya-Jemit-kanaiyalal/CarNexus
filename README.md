@@ -15,7 +15,7 @@ This project is a web-based showroom application for buying, exploring, and serv
 - **Location Information** (`9Location.html`) to find showrooms.
 - **Authentication** pages: `Login.html`, `Signup.html`, `forgetpassword.html`.
 - **Admin Panel** (`AdminPanel.html`) and associated backend PHP scripts for login, logout, dashboard, and CRUD operations on services and test drives.
-- **Data Storage**: PHP and text files (`SignupData.txt`, `TestdriveData.txt`) for user and test drive information.
+- **Data Storage**: MySQL Tables.
 - **Frontend assets**: HTML, CSS (`style.css`, `cars.css`), JavaScript (`web.js`), images in `/photo` and videos.
 
 # live : https://carnexus.netlify.app
